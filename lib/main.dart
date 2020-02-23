@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stats_debator/components/standings.dart';
+
+import 'screen/player_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,22 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Standings',
-            ),
-            Standings(),
-            RaisedButton(
-              onPressed: null,
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
+        child: PlayerScreen(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
