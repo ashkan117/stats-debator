@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:stats_debator/components/standings.dart';
 import 'package:stats_debator/components/leaders.dart';
+=======
+
+import 'screen/player_screen.dart';
+>>>>>>> refs/remotes/origin/master
 
 void main() => runApp(MyApp());
 
