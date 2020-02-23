@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stats_debator/components/standings.dart';
+import 'package:stats_debator/components/leaders.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Standings',
             ),
             Standings(),
+            Leaders(),
             RaisedButton(
               onPressed: null,
             ),
