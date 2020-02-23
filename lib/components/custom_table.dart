@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 class CustomTable extends StatelessWidget {
-  List<String> data;
-  List<String> row;
+  DataTableSource dataTableSource;
+  List<String> columnNames;
+  String header;
 
-  CustomTable(this.row, this.data);
+  CustomTable({this.columnNames, this.dataTableSource, this.header});
   @override
   Widget build(BuildContext context) {
-    return DataTable(
-      columns:
-          row.map((String column) => DataColumn(label: Text(column))).toList(),
-      rows: [
-        DataRow(
-            cells:
-                data.map((String rowInfo) => DataCell(Text(rowInfo))).toList())
-      ],
+    return PaginatedDataTable(
+      rowsPerPage: 10,
+      header: Text(this.header),
+      columns: columnNames
+          .map((String column) => DataColumn(label: Text(column)))
+          .toList(),
+      source: dataTableSource,
     );
   }
 }
