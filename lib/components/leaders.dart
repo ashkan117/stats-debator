@@ -14,17 +14,14 @@ class Leaders extends StatelessWidget {
 //    );
 
     return Container(
-      color: Colors.white,
-      padding: EdgeInsets.all(20.0),
-      child: Table (
-        children: [
-          TableRow(children: [
-            // DATA TO BE IMPORTED USING API
-          ])
-        ],
-      );
-    );
-
+        color: Colors.white,
+        padding: EdgeInsets.all(20.0),
+        child: Table(
+          children: [
+            TableRow(children: [
+              // DATA TO BE IMPORTED USING API
+            ])
+          ],
+        ));
   }
-
 }
