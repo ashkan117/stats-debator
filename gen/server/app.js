@@ -4,7 +4,7 @@ const helmet = require('helmet');
 // const cookieParser = require('cookie-parser');
 // const log = require('./src/log/logger')(__filename);
 // const standings = require('./src/routes/standings');
-// const teams = require('./src/routes/teams');
+ const teams = require('./src/routes/teams');
 const players = require('./src/routes/players');
 // const middleware = require('./src/routes/middleware');
 
@@ -46,8 +46,8 @@ app.options('*', (req,res)=>{
 //      RESTFUL ROUTES
 // ===========================
 
+app.use('/teams',teams)
 app.use('/players', players);
-
 app.get("/", (req,res) => {
     // var query = req.query.search;
     // var url = ""
@@ -58,6 +58,6 @@ app.get("/", (req,res) => {
 
 
 
-app.listen(3000, function() {
+app.listen(8000, function() {
 	console.log("Server started");
 })
