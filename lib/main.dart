@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stats_debator/components/standings.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
