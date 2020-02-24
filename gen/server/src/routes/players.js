@@ -10,6 +10,18 @@ router.get('/', () => {
     }
 });
 
+router.get('/:firstName/:lastName', (req,res) => {
+  {
+      console.log(req.params)
+      console.log(req.params.firstName)
+      console.log(req.params.lastName)
+      const player = NBA.findPlayer(req.params.firstName + ' ' + req.params.lastName);
+      console.log(player.playerId)
+      NBA.stats.playerInfo({ PlayerID: player.playerId }).then((playerInfo) => {
+          res.send(playerInfo);
+      });
+  }
+});
 // app.get('/shmrk/product/:product_id', productRoutes. getProductById);
 
 

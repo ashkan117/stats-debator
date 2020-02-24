@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:stats_debator/screen/player_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
       home: FutureBuilder(
 //          future: client
 //              .getUrl(Uri.parse("http://172.28.172.226:8000/teams/Rockets")),
-          future: http.get("http://172.28.172.226:8000/teams/Rockets"),
+          future: http.get("http://172.28.172.226:8000/players/Chris/Paul"),
           builder:
               (BuildContext context, AsyncSnapshot<http.Response> snapshot) {
             if (snapshot.hasData &&
                 snapshot.connectionState != ConnectionState.waiting) {
-              return Text(jsonDecode(snapshot.data.body).toString());
+              return PlayerScreen(json: jsonDecode(snapshot.data.body));
             } else {
               return Text("ERROR");
             }
