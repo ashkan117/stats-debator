@@ -1,3 +1,0 @@
-class PlayerStats {
-  int points;
-}
