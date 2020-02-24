@@ -19,15 +19,6 @@ app.use((err, req, res, next) => {
     }
 });
 
-// app.use(cookieParser());
-// // server listening.
-
-// app.use(cors({
-//     origin: process.env.ORIGIN,
-//     methods: [ "GET", "POST", "PUT", "DELETE"]
-//     })
-// )
-
 // Strict origin checking
 app.use((req, res, next) => {
     if (req.header('Origin') !== process.env.ORIGIN){
@@ -49,13 +40,8 @@ app.options('*', (req,res)=>{
 app.use('/teams',teams)
 app.use('/players', players);
 app.get("/", (req,res) => {
-    // var query = req.query.search;
-    // var url = ""
-
+    res.redirect('/players/LeBron/James');
 });
-
-// app.get('/shmrk/product/:product_id', productRoutes. getProductById);
-
 
 
 app.listen(8000, function() {
