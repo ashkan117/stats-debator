@@ -72,7 +72,6 @@ class Standings extends StatelessWidget {
             child: SingleChildScrollView(
               child: CustomTable(
                 columnNames: column,
-                dataTableSource: StandingsDataSource(rows),
                 header: "Standings",
               ),
             ),
@@ -85,7 +84,6 @@ class Standings extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: CustomTable(
                     columnNames: column,
-                    dataTableSource: StandingsDataSource(rows),
                     header: "Standings",
                   ),
                 ),
@@ -96,7 +94,6 @@ class Standings extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: CustomTable(
                     columnNames: column,
-                    dataTableSource: StandingsDataSource(rows),
                     header: "Standings",
                   ),
                 ),

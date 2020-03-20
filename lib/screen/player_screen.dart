@@ -2,34 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:stats_debator/components/custom_table.dart';
 import 'package:stats_debator/models/player_data.dart';
 
-class PlayerScreen extends StatelessWidget {
-  dynamic json;
+class PlayerScreen extends StatefulWidget {
+  List<Map<String, dynamic>> json;
 
   PlayerScreen({this.json});
+
+  @override
+  _PlayerScreenState createState() => _PlayerScreenState();
+}
+
+class _PlayerScreenState extends State<PlayerScreen> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-//    List<PlayerData> data = [
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//      PlayerData(age: 35, points: 1350, gamesPlayed: 52),
-//    ];
-
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Search Player"),
+      ),
       body: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Container(
             width: 500,
-            height: 200,
+            height: 500,
             child: ListView(
               children: <Widget>[
                 Center(
@@ -39,7 +35,7 @@ class PlayerScreen extends StatelessWidget {
                 )),
                 CustomTable(
                   columnNames: PlayerData.getCommonList(),
-                  json: json,
+                  json: widget.json,
                   header: "Player Stats",
                 ),
               ],
@@ -49,31 +45,4 @@ class PlayerScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-class PlayerDataSource extends DataTableSource {
-  PlayerData data;
-  PlayerDataSource(this.data);
-
-  @override
-  DataRow getRow(int index) {
-    List<DataCell> cells = [];
-    PlayerData.playerInfoMap.forEach((category, categoryResults) {
-      categoryResults.forEach((item) {
-        cells.add(data.json[item]);
-      });
-    });
-    return DataRow(cells: cells);
-  }
-
-  @override
-  // TODO: implement isRowCountApproximate
-  bool get isRowCountApproximate => true;
-
-  @override
-  int get rowCount => data.length;
-
-  @override
-  // TODO: implement selectedRowCount
-  int get selectedRowCount => 0;
 }

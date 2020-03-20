@@ -17,7 +17,6 @@ class TeamScreen extends StatelessWidget {
     if (data.length > 10) {
       return CustomTable(
         columnNames: TeamData.columns,
-        dataTableSource: TeamDataSource(data),
         header: "Team Data",
       );
     } else {

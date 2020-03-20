@@ -7,9 +7,12 @@ const helmet = require('helmet');
  const teams = require('./src/routes/teams');
 const players = require('./src/routes/players');
 // const middleware = require('./src/routes/middleware');
+bodyParser = require('body-parser');
 
 app.use(helmet()); //for strict HTTP header
-// app.use(bodyParser.json()) //to support JSON encoded bodies
+app.use(bodyParser.json()) //to support JSON encoded bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ type: 'application/*+json' }))
 
 app.use((err, req, res, next) => {
     if (err) {
