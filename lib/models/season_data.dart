@@ -1,0 +1,31 @@
+class SeasonData {
+  static List<String> columns = [
+    //"playerId",
+    "seasonId",
+    //"leagueId",
+    //"teamId",
+    "teamAbbreviation",
+    "playerAge",
+    "gp",
+    "gs",
+    "min",
+    "fgm",
+    "fga",
+    "fgPct",
+    "fG3M",
+    "fG3A",
+    "fg3Pct",
+    "ftm",
+    "fta",
+    "ftPct",
+    "oreb",
+    "dreb",
+    "reb",
+    "ast",
+    "stl",
+    "blk",
+    "tov",
+    "pf",
+    "pts"
+  ];
+}
